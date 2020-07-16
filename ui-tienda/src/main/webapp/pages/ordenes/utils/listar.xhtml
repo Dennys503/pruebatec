@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:body>
+        <p:dataTable id="datalist" value="#{ordenController.items}" var="item" 
+                     >
+
+            <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+            <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+            <f:facet name="header">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-12 ui-lg-12">
+                        <h6 class="title">
+                            <span class="fa fa-bars" />
+                            Listado de regístros encontrados
+                            <span class="badge-simple bg-dark"> #{ordenController.items.size()}   </span>
+                        </h6>
+                    </div>
+                </div>                
+            </f:facet>
+
+            <p:column width="10%" headerText="ID" sortBy="#{item.idOrden}" >
+                <h:outputText value="#{item.idOrden}"/>
+            </p:column>
+            <p:column width="40%" headerText="Cliente " sortBy="#{item.idCliente.nombres}">
+                <h:outputText value="#{item.idCliente.nombres}"/>
+            </p:column>
+            <p:column width="40%" headerText="Producto " sortBy="#{item.idProducto.nombre}">
+                <h:outputText value="#{item.idProducto.nombre}"/>
+            </p:column>
+            <p:column width="15%" headerText="Cantidad " sortBy="#{item.cantidad}">
+                <h:outputText value="#{item.cantidad}"/>
+            </p:column>
+
+            <p:column  style="width:20% ;text-align: center" headerText="Opcion">
+                <p:commandButton update=":OrdenViewFrm" icon="fa fa-search" id="viewButton" oncomplete="PF('OrdenViewDialog').show()" title="Ver" class="btn-info">
+                    <f:setPropertyActionListener value="#{item}" target="#{ordenController.selected}" />
+                </p:commandButton>
+                <p:commandButton update=":OrdenEditFrm" icon="fa fa-pencil" id="editButton" oncomplete="PF('OrdenEditDialog').show()" process="@form" title="Editar" class="btn-processed">
+                    <f:setPropertyActionListener value="#{item}" target="#{ordenController.selected}" />
+                </p:commandButton>
+                <p:commandButton  icon="fa fa-trash-o" update="@form" id="deleteButton" action="#{ordenController.eliminar()}" title="Eliminar" class="btn-canceled" >
+                    <f:setPropertyActionListener value="#{item}" target="#{ordenController.selected}" />
+                    <p:confirm icon="fa fa-exclamation-triangle" header="Confirmación" message="¿Esta seguro que desea continuar?" />
+                </p:commandButton>
+            </p:column>
+
+            <f:facet name="footer">
+                <p:commandButton id="createButton"   icon="fa fa-plus-square"  class="btn-info"                                  value="Nuevo" actionListener="#{ordenController.prepararCrear}"
+                                 update=":OrdenCreateFrm" oncomplete="PF('OrdenCreateDialog').show()">
+                </p:commandButton>        
+            </f:facet>
+        </p:dataTable>
+    </h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

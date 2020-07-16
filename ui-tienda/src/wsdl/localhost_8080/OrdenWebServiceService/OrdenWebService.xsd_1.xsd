@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.tienda.ws.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.tienda.ws.com/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="cliente" type="tns:cliente"/>
+
+<xs:element name="crearOrden" type="tns:crearOrden"/>
+
+<xs:element name="crearOrdenResponse" type="tns:crearOrdenResponse"/>
+
+<xs:element name="editarOrden" type="tns:editarOrden"/>
+
+<xs:element name="editarOrdenResponse" type="tns:editarOrdenResponse"/>
+
+<xs:element name="eliminarOrden" type="tns:eliminarOrden"/>
+
+<xs:element name="eliminarOrdenResponse" type="tns:eliminarOrdenResponse"/>
+
+<xs:element name="getOrden" type="tns:getOrden"/>
+
+<xs:element name="getOrdenResponse" type="tns:getOrdenResponse"/>
+
+<xs:element name="getOrdenes" type="tns:getOrdenes"/>
+
+<xs:element name="getOrdenesResponse" type="tns:getOrdenesResponse"/>
+
+<xs:element name="orden" type="tns:orden"/>
+
+<xs:element name="producto" type="tns:producto"/>
+
+<xs:complexType name="editarOrden">
+<xs:sequence>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orden">
+<xs:sequence>
+<xs:element name="cantidad" type="xs:decimal" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idCliente" type="tns:cliente" minOccurs="0"/>
+<xs:element name="idOrden" type="xs:int" minOccurs="0"/>
+<xs:element name="idProducto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="idCliente" type="xs:int" minOccurs="0"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="idProducto" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrden">
+<xs:sequence>
+<xs:element name="idOrden" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrdenResponse">
+<xs:sequence>
+<xs:element name="returnMsgOrden" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrden">
+<xs:sequence>
+<xs:element name="idOrden" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getOrdenResponse">
+<xs:sequence>
+<xs:element name="returnOrden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearOrden">
+<xs:sequence>
+<xs:element name="idOrden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getOrdenes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getOrdenesResponse">
+<xs:sequence>
+<xs:element name="returnOrdenes" type="tns:orden" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://Dennys503:8080/OrdenWebServiceService/OrdenWebService?wsdl" uri="wsdl/Dennys503_8080/OrdenWebServiceService/OrdenWebService.wsdl"/>
+    <system systemId="http://Dennys503:8080/OrdenWebServiceService/OrdenWebService?xsd=1" uri="wsdl/Dennys503_8080/OrdenWebServiceService/OrdenWebService.xsd_1.xsd"/>
+    <system systemId="http://Dennys503:8080/ClienteWebServiceService/ClienteWebService?wsdl" uri="wsdl/Dennys503_8080/ClienteWebServiceService/ClienteWebService.wsdl"/>
+    <system systemId="http://Dennys503:8080/ClienteWebServiceService/ClienteWebService?xsd=1" uri="wsdl/Dennys503_8080/ClienteWebServiceService/ClienteWebService.xsd_1.xsd"/>
+    <system systemId="http://Dennys503:8080/ProductoWebServiceService/ProductoWebService?wsdl" uri="wsdl/Dennys503_8080/ProductoWebServiceService/ProductoWebService.wsdl"/>
+    <system systemId="http://Dennys503:8080/ProductoWebServiceService/ProductoWebService?xsd=1" uri="wsdl/Dennys503_8080/ProductoWebServiceService/ProductoWebService.xsd_1.xsd"/>
+    <system systemId="http://DESKTOP-KRL58D1:8080/ProductoWebServiceService/ProductoWebService?wsdl" uri="wsdl/DESKTOP-KRL58D1_8080/ProductoWebServiceService/ProductoWebService.wsdl"/>
+    <system systemId="http://DESKTOP-KRL58D1:8080/ProductoWebServiceService/ProductoWebService?xsd=1" uri="wsdl/DESKTOP-KRL58D1_8080/ProductoWebServiceService/ProductoWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ClienteWebServiceService/ClienteWebService?wsdl" uri="wsdl/localhost_8080/ClienteWebServiceService/ClienteWebService.wsdl"/>
+    <system systemId="http://localhost:8080/ClienteWebServiceService/ClienteWebService?xsd=1" uri="wsdl/localhost_8080/ClienteWebServiceService/ClienteWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/OrdenWebServiceService/OrdenWebService?wsdl" uri="wsdl/localhost_8080/OrdenWebServiceService/OrdenWebService.wsdl"/>
+    <system systemId="http://localhost:8080/OrdenWebServiceService/OrdenWebService?xsd=1" uri="wsdl/localhost_8080/OrdenWebServiceService/OrdenWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ProductoWebServiceService/ProductoWebService?wsdl" uri="wsdl/localhost_8080/ProductoWebServiceService/ProductoWebService.wsdl"/>
+    <system systemId="http://localhost:8080/ProductoWebServiceService/ProductoWebService?xsd=1" uri="wsdl/localhost_8080/ProductoWebServiceService/ProductoWebService.xsd_1.xsd"/>
+</catalog>

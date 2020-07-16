@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog id="OrdenViewDlg" widgetVar="OrdenViewDialog" modal="true" resizable="false" appendTo="@(body)" header="VER ORDEN">
+            <h:form id="OrdenViewFrm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ordenController.selected != null}">
+                        <h:outputText value="ID: "/>
+                        <h:outputText value="#{ordenController.selected.idOrden}"  />
+                        <h:outputText value="CLIENTE: "/>
+                        <h:outputText value="#{ordenController.selected.idCliente.nombres}"  />
+                        <h:outputText value="PRODUCTO: "/>
+                        <h:outputText value="#{ordenController.selected.idProducto.nombre}"  />
+                        <h:outputText value="CANTIDAD: "/>
+                        <h:outputText value="#{ordenController.selected.cantidad}"  />
+                        <h:outputText value="PRECIO: "/>
+                        <h:outputText value="#{ordenController.selected.idProducto.precio}"  />
+                        <h:outputText value="SUBTOTAL: "/>
+                        <h:outputText value="#{ordenController.selected.idProducto.precio * ordenController.selected.cantidad}"  />
+                    </p:panelGrid>
+                    <p:toolbar>
+                        <f:facet name="right">
+                            <p:commandButton icon="fa fa-times-circle" value="Cerrar" class="btn-canceled" oncomplete="PF('OrdenViewDialog').hide();" immediate="true"/>
+                        </f:facet>
+                    </p:toolbar>                      
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+    </ui:composition>
+</html>
+
+
+

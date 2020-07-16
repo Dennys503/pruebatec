@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template/template.xhtml">
+
+    <ui:define name="title">
+        <h:outputText value="Listado de ordenes"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:form id="OrdenListFrm">
+            <f:metadata>
+                <f:viewAction action="#{ordenController.consultarTodos()}" />
+            </f:metadata>
+            <p:panel >
+                <h4>
+                    <i class="fa fa-list" /> LISTADO DE ORDENES
+                    <p:outputPanel style="float: right">
+                        <p:commandButton icon="fa fa-reply"
+                                         value="REGRESAR" 
+                                         class="btn-canceled" oncomplete="window.history.back();" />
+                    </p:outputPanel>
+                </h4>
+                <br/>
+                <ui:include src="utils/listar.xhtml" />
+            </p:panel>
+        </h:form>
+        <ui:include src="crear.xhtml"/>
+        <ui:include src="editar.xhtml"/>
+        <ui:include src="ver.xhtml"/>
+    </ui:define>
+</ui:composition>
+
+
