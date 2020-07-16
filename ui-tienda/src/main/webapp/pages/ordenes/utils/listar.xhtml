@@ -36,8 +36,14 @@
             <p:column width="15%" headerText="Cantidad " sortBy="#{item.cantidad}">
                 <h:outputText value="#{item.cantidad}"/>
             </p:column>
+            <p:column width="15%" headerText="Precio " sortBy="#{item.idProducto.precio}">
+                <h:outputText value="#{item.idProducto.precio}"/>
+            </p:column>
+             <p:column width="15%" headerText="subtotal " >
+                 <h:outputText value="#{item.idProducto.precio * item.cantidad}"/>
+            </p:column>
 
-            <p:column  style="width:20% ;text-align: center" headerText="Opcion">
+            <p:column  style="width:30% ;text-align: center" headerText="Opcion">
                 <p:commandButton update=":OrdenViewFrm" icon="fa fa-search" id="viewButton" oncomplete="PF('OrdenViewDialog').show()" title="Ver" class="btn-info">
                     <f:setPropertyActionListener value="#{item}" target="#{ordenController.selected}" />
                 </p:commandButton>
